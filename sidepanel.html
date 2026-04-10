@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes Sidebar</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <div class="app">
+    <section class="notes-section">
+      <div class="notes-header">
+        <div class="section-title-wrap">
+          <h2>All items</h2>
+          <span id="countBadge" class="badge">0</span>
+        </div>
+        <button id="clearMergedBtn" class="ghost danger">Clear</button>
+      </div>
+      <div id="timelineList" class="notes-list"></div>
+    </section>
+
+    <section class="notes-section">
+      <div class="notes-header">
+        <h2>By page</h2>
+        <button id="clearAllBtn" class="ghost danger">Clear all</button>
+      </div>
+      <div id="groupedList" class="notes-list"></div>
+    </section>
+
+    <section class="composer">
+      <div class="composer-header">
+        <div>
+          <h2>Scratch pad</h2>
+          <p class="helper">Temporary box for pasted notes. Edit here, then copy out.</p>
+        </div>
+        <button id="copyScratchBtn" class="ghost">Copy</button>
+      </div>
+      <textarea id="scratchPad" placeholder="Paste or write anything here..."></textarea>
+    </section>
+  </div>
+
+  <template id="noteTemplate">
+    <article class="note-card">
+      <div class="note-head">
+        <div class="note-main">
+          <h3 class="note-title"></h3>
+          <a class="note-link" target="_blank" rel="noreferrer"></a>
+        </div>
+        <div class="note-actions">
+          <button class="copy-note ghost">Copy</button>
+          <button class="save-note ghost">Save</button>
+          <button class="highlight-note ghost">Highlight</button>
+          <button class="delete-note danger ghost">Delete</button>
+        </div>
+      </div>
+      <div class="note-body"></div>
+    </article>
+  </template>
+
+  <template id="groupTemplate">
+    <section class="group-card">
+      <div class="group-head">
+        <div>
+          <h3 class="group-title"></h3>
+          <a class="group-link" target="_blank" rel="noreferrer"></a>
+        </div>
+        <span class="group-count"></span>
+      </div>
+      <div class="group-list"></div>
+    </section>
+  </template>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
